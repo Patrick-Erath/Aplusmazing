@@ -1,9 +1,9 @@
 # Aplusmazing
 
-![Index](1.png)
+![Index](Images/1.png)
 
-![Home](2.png)
+![Home](Images/2.png)
 
-![Signup](3.png)
+![Signup](Images/3.png)
 
-![View Profile](4.png)
+![View Profile](Images/4.png)
