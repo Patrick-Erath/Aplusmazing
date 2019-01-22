@@ -1,0 +1,92 @@
+body {
+  background-color: #000;
+}
+
+#landing-header { 
+  /*z-index is coming forward by 1, ie it is INFRONT of anything more than one*/
+  /*Can't be static if we want z-index, need relative */
+  z-index: 1;
+  position: relative;
+  text-align: center;
+  /* vh stands for view height*/
+  padding-top: 40vh;
+}
+
+#landing-header h1 {
+  color: #fff;
+}
+
+.slideshow { 
+  position: fixed;
+  /* Takes up the entire page */
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  /* z-index sets background pictures to be behind all other content */
+  z-index: 0;
+  /* list-style :none gets rid of bulletpoints*/
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.slideshow li { 
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* background-size cover allows images to take entire page */
+  background-size: cover;
+  /* background-position centers the images */
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  /* Opacity is initally 0, ie they start not at all fadedout */
+  opacity: 0;
+  z-index: 0;
+  /* imageAnimation allows for images to animate, lasts 50s, bethesamespeedBEGGINGtoEND goFOREVER */
+  animation: imageAnimation 50s linear infinite; 
+}
+
+.slideshow li:nth-child(1) { 
+  background-image: url(http://i.imgur.com/K3mPv14.jpg) 
+}
+.slideshow li:nth-child(2) { 
+  background-image: url(http://i.imgur.com/SBEmFpv.jpg);
+  animation-delay: 10s; 
+}
+.slideshow li:nth-child(3) { 
+  background-image: url(http://i.imgur.com/emvhOnb.jpg);
+  animation-delay: 20s; 
+}
+.slideshow li:nth-child(4) { 
+  background-image: url(http://i.imgur.com/2LSMCmJ.jpg);
+  animation-delay: 30s; 
+}
+.slideshow li:nth-child(5) { 
+  background-image: url(http://i.imgur.com/TVGe0Ef.jpg);
+  animation-delay: 40s; 
+}
+
+@keyframes imageAnimation { 
+  0% { 
+    opacity: 0; 
+    animation-timing-function: ease-in;
+  }
+  10% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+  20% {
+    opacity: 1
+  }
+  30% {
+    opacity: 0
+  }
+}
+
+/* Older browser support - .no-cssanimations class added by modernizr */
+.no-cssanimations .slideshow li {
+	opacity: 1;
+}

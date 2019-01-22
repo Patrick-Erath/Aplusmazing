@@ -1,0 +1,21 @@
+<% include partials/headers.ejs %>
+
+<h1>The Posts Page</h1>
+
+<% for(var i=0; i<posts.length;i++){ %>
+    <li>
+        <%= posts[i].title %> - <strong><%= posts[i].author%></strong>
+    </li>
+<% } %>
+ 
+<% include partials/headers.ejs %>
+
+<% posts.forEach(function(posts){  %>
+    <li>
+        <%= posts.title %> - <strong><%= posts.author%></strong>
+    </li>
+  
+<% });  %>
+
+<% include partials/footer.ejs %>
+
